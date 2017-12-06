@@ -16,10 +16,10 @@ body {
     &:before {
       content: '\F086';
       position: absolute;
-      top: 20px;
-      left: 15px;
+      top: 25px;
+      left: 20px;
       font-family: FontAwesome;
-      font-size: 50px;
+      font-size: 40px;
       color: #F6F3E7;
     }
   }
@@ -39,12 +39,37 @@ body {
     p {
       font-size: 16px;
       font-weight: 600;
+      cursor: pointer;
+
+      &.selected {
+        text-decoration: underline;
+      }
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
+
+    i {
+      cursor: pointer;
+      font-size: 20px;
+
+      &:hover {
+        font-size: 25px;
+      }
     }
   }
 
   .channel {
+    padding-left: 25px;
     background-color: #F6F3E7;
     flex: 1 0 calc(100% - 280px);
     height: 100%;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 600;
+      color: #266778;
+    }
   }
 }

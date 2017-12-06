@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Channels from '../containers/channels.jsx'
+import Channel from '../containers/channel.jsx'
 
 const App = () => {
   return (
@@ -8,7 +9,7 @@ const App = () => {
       <div className="logo">
       </div>
       <Channels />
-      <div className="channel"></div>
+      <Channel />
     </div>
   );
 };

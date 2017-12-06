@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { channels } from '../actions';
+import { selectChannel } from '../actions';
 
 class Channels extends Component {
 
@@ -14,7 +15,15 @@ class Channels extends Component {
     return (
       <div className="channels">
         <h1>Redux chat</h1>
-        {this.props.channels.map((channel) => <p key={channel} onClick={() => this.props.selectChannel(channel)}>{channel}</p> )}
+        {this.props.channels.map((channel) =>
+          <p key={channel}
+             onClick={() => this.props.selectChannel(channel)}
+             className={channel === this.props.selectedChannel ? "selected" : ""}
+          >
+            {channel}
+          </p>
+        )}
+        <i className="fa fa-plus-square" aria-hidden="true"></i>
       </div>
     );
   }
@@ -22,16 +31,16 @@ class Channels extends Component {
 
 function mapStateToProps(state) {
   return {
-    channels: state.channels
+    channels: state.channels,
+    selectedChannel: state.selectedChannel
   };
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators(
-//     { selectChannel },
-//     dispatch
-//   );
-// }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { selectChannel },
+    dispatch
+  );
+}
 
-export default connect(mapStateToProps)(Channels);
-// export default connect(mapStateToProps, mapDispatchToProps)(Channels);
+export default connect(mapStateToProps, mapDispatchToProps)(Channels);
