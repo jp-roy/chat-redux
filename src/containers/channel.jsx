@@ -7,6 +7,7 @@ import MessageForm from '../containers/message_form.jsx'
 
 import stringToColour from '../../assets/javascript/channel.js';
 import Moment from 'react-moment';
+import Emojify from 'react-emojione';
 
 class Channel extends Component {
   constructor(props){
@@ -54,7 +55,11 @@ class Channel extends Component {
                   </Moment>
                 </span>
               </div>
-              <div className="content">{message.content}</div>
+              <div className="content">
+                <Emojify>
+                  {message.content}
+                </Emojify>
+              </div>
             </div>
           )}
         </div>
