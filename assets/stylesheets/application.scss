@@ -12,17 +12,34 @@ body {
     flex: 0 0 80px;
     height: 100%;
     text-align: center;
-    padding-top: 15px;
 
-    img {
-      width: 50px
+    &:before {
+      content: '\F086';
+      position: absolute;
+      top: 20px;
+      left: 15px;
+      font-family: FontAwesome;
+      font-size: 50px;
+      color: #F6F3E7;
     }
   }
 
   .channels {
-    background-color: #B5DEE9;
+    padding-left: 15px;
+    background-color: #0081A2;
+    opacity: 0.85;
     flex: 0 0 200px;
     height: 100%;
+    color: #F6F3E7;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 600;
+    }
   }
 
   .channel {
