@@ -22,3 +22,27 @@ export function getMessages() {
     payload: promise
   };
 }
+
+export function sendMessage(channel, author, content) {
+  const body = { channel: channel,
+    author: author,
+    content: content
+  };
+
+
+    debugger
+
+  const promise = fetch('https://wagon-chat.herokuapp.com/general/messages', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(r => r.json());
+
+  return {
+    type: 'SEND_MESSAGE',
+    payload: promise
+  };
+}

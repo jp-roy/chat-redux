@@ -37,7 +37,7 @@ body {
     }
 
     p {
-      font-size: 16px;
+      font-size: 1.3em;
       font-weight: 600;
       cursor: pointer;
 
@@ -65,21 +65,69 @@ body {
     background-color: #F6F3E7;
     flex: 1 0 calc(100% - 280px);
     height: 100%;
+    display: flex;
+    flex-direction: column;
 
     h1 {
       font-size: 30px;
       font-weight: 600;
       color: #266778;
+      flex: 0 0 40px;
     }
 
-    .message {
-      margin-bottom: 10px;
+    .message-list {
+      flex: 1 0 calc(100% - 300px);
 
-      .author {
-        font-size: 18px;
-        font-weight: 600;
-        letter-spacing: 1.4px;
+      .message {
+        margin-bottom: 10px;
+
+        .header {
+          font-size: 1.3em;
+
+          .author {
+          }
+
+          .time {
+            font-size: 0.8em;
+            opacity: 0.7;
+          }
+        }
+
+        .content {
+          font-size: 1.3em;
+        }
       }
     }
+
+    .message-form {
+      position: absolute;
+      height: 100px;
+      bottom: 20px;
+      width: calc(100% - 305px);
+      background-color: white;
+      flex: 0 0 100px;
+
+      .form-search {
+        padding: 60px 60px 60px 120px;
+        border: none;
+        font-size: 2.6em;
+        box-shadow: none;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      &:before {
+        content: '\F002';
+        position: absolute;
+        top: 35px;
+        left: 60px;
+        font-family: FontAwesome;
+        font-size: 2.6em;
+        opacity: 0.4;
+      }
+    }
+
+
   }
 }

@@ -3,43 +3,40 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { getMessages } from '../actions';
+import MessageForm from '../containers/message_form.jsx'
 
 import stringToColour from '../../assets/javascript/channel.js';
 import Moment from 'react-moment';
 
 class Channel extends Component {
-
   componentWillMount() {
     this.props.getMessages();
   }
 
-
   render() {
     return (
       <div className="channel">
+        <h1>Channel {this.props.selectedChannel}</h1>
         <div className="message-list">
-          <h1>Channel {this.props.selectedChannel}</h1>
           {this.props.messages.map((message) =>
             <div className="message" key={message.created_at}>
               <div className="header">
-                <span className="author" style={{ color: stringToColour(message.author) }}>{message.author}</span>
-                <span className="ts"> -
-
-                    <Moment format="dd.mm.yyyy hh:MM:ss">
-                      {message.created_at}
-                    </Moment>
+                <span className="author" style={{ color: stringToColour(message.author) }}><strong>{message.author}</strong></span>
+                <span className="time">&nbsp;-&nbsp;
+                  <Moment format="HH:m:ss">
+                    {message.created_at}
+                  </Moment>
                 </span>
               </div>
               <div className="content">{message.content}</div>
             </div>
           )}
         </div>
+        <MessageForm />
       </div>
     );
   }
 }
-
-
 
 function mapStateToProps(state) {
   return {
