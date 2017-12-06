@@ -30,8 +30,8 @@ const middlewares = composeEnhancers(applyMiddleware(logger, reduxPromise));
 // render an instance of the component in the DOM
 const initialState = {
   messages: [],
-  channels: ["#General", "#React", "#Paris"],
-  selectedChannel: "#General",
+  channels: ["general", "react", "paris"],
+  selectedChannel: "general",
   // currentUsername: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`
   currentUsername: "Jeanfil"
 };

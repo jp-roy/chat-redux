@@ -10,7 +10,11 @@ import Moment from 'react-moment';
 
 class Channel extends Component {
   componentWillMount() {
-    this.props.getMessages();
+    this.props.getMessages(this.props.selectedChannel);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.props.getMessages(nextProps.selectedChannel);
   }
 
   render() {
