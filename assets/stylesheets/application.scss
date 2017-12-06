@@ -71,5 +71,15 @@ body {
       font-weight: 600;
       color: #266778;
     }
+
+    .message {
+      margin-bottom: 10px;
+
+      .author {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+      }
+    }
   }
 }
