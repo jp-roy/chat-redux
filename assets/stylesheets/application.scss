@@ -4,4 +4,30 @@ body {
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  height: calc(100vh - 40px);
+
+  .logo {
+    background-color: #0081A2;
+    flex: 0 0 80px;
+    height: 100%;
+    text-align: center;
+    padding-top: 15px;
+
+    img {
+      width: 50px
+    }
+  }
+
+  .channels {
+    background-color: #B5DEE9;
+    flex: 0 0 200px;
+    height: 100%;
+  }
+
+  .channel {
+    background-color: #F6F3E7;
+    flex: 1 0 calc(100% - 280px);
+    height: 100%;
+  }
 }
