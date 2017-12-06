@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { channels } from '../actions';
 import { selectChannel } from '../actions';
 
 class Channels extends Component {
-
-  componentWillMount() {
-    // TODO
-  }
 
   render() {
     return (

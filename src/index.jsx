@@ -32,8 +32,8 @@ const initialState = {
   messages: [],
   channels: ["general", "react", "paris"],
   selectedChannel: "general",
-  // currentUsername: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`
-  currentUsername: "Jeanfil"
+  currentUsername: prompt("What is your username?") || `anonymous${Math.floor(10 + (Math.random() * 90))}`
+  // currentUsername: "Jeanfil"
 };
 
 ReactDOM.render(

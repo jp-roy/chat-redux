@@ -20,20 +20,16 @@ class MessageForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.sendMessage(this.props.selectedChannel, this.props.currentUsername, this.state.value);
-    this.props.getMessages(this.props.selectedChannel);
-    this.setState({value: ""});
+    this.setState({ value: "" });
   }
 
-  componentWillMount() {
-    // TODO
-  }
 
   render() {
     return (
       <div className="message-form">
         <form onSubmit={this.handleSubmit}>
           <input type="text" className="form-control form-search" value={this.state.value} onChange={this.handleChange} />
-          <input type="submit" value="Submit" />
+          <input type="hidden" value="Submit" />
         </form>
       </div>
     );

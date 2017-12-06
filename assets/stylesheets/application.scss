@@ -46,7 +46,7 @@ body {
       }
 
       &:hover {
-        opacity: 0.85;
+        text-decoration: underline;
       }
     }
 
@@ -62,9 +62,11 @@ body {
 
   .channel {
     padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
     background-color: #F6F3E7;
-    flex: 1 0 calc(100% - 280px);
-    height: 100%;
+    flex-grow: 1;
+    height: calc(100vh - 40px);
     display: flex;
     flex-direction: column;
 
@@ -76,7 +78,8 @@ body {
     }
 
     .message-list {
-      flex: 1 0 calc(100% - 300px);
+      flex-grow: 1;
+      overflow-x: auto;
 
       .message {
         margin-bottom: 10px;
@@ -100,31 +103,12 @@ body {
     }
 
     .message-form {
-      position: absolute;
-      height: 100px;
-      bottom: 20px;
-      width: calc(100% - 305px);
-      background-color: white;
-      flex: 0 0 100px;
+      flex: 0 0 50px;
 
       .form-search {
-        padding: 60px 60px 60px 120px;
-        border: none;
-        font-size: 2.6em;
-        box-shadow: none;
-        &:focus {
-          box-shadow: none;
-        }
-      }
-
-      &:before {
-        content: '\F002';
-        position: absolute;
-        top: 35px;
-        left: 60px;
-        font-family: FontAwesome;
-        font-size: 2.6em;
-        opacity: 0.4;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 1.3em;
       }
     }
 
